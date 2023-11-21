@@ -1,12 +1,22 @@
+
+
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'myjenkins-blueocean'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+    options {
+        skipStagesAfterUnstable()
+    }
     stages {
         stage('Build') {
             steps {
-		sh 'mvn -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
- 	stage('Test') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
             }
@@ -16,5 +26,12 @@ pipeline {
                 }
             }
         }
+        stage('Deliver') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh' 
+            }
+        }
     }
 }
+
+
