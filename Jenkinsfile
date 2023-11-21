@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'javac java/basic/Basic.java'
-		sh 'cd java; java basic.Basic'
+		sh 'cd java; printf "64\n" | java basic.Basic'
             }
         }
     }
