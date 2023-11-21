@@ -66,4 +66,15 @@ public class MaventTestLibTest {
         // TODO review the generated test code and remove the default call to fail.
     }
     
+    
+    
+    @org.junit.Test
+    public void testSomeMethodFail() {
+        System.out.println("someMethod");
+        MaventTestLib instance = new MaventTestLib();
+        int expResult = 46;
+        int result = instance.someMethod();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
 }
