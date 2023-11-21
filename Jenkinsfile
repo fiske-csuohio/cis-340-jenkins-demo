@@ -1,12 +1,6 @@
 
 
 pipeline {
-    agent {
-        docker {
-            image 'myjenkins-blueocean'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
     options {
         skipStagesAfterUnstable()
     }
