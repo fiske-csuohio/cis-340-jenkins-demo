@@ -72,7 +72,7 @@ public class MaventTestLibTest {
     public void testSomeMethodFail() {
         System.out.println("someMethod");
         MaventTestLib instance = new MaventTestLib();
-        int expResult = 46;
+        int expResult = 64;
         int result = instance.someMethod();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
