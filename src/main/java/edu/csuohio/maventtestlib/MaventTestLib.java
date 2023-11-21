@@ -21,5 +21,4 @@ public class MaventTestLib {
         System.out.println("Hello World!");
     }
     */
-    asfdsad
 }
